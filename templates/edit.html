@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}"> -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-header text-center">Home page</h1>
+        <div class="row">
+ 
+{% block content %}
+    <form action="/admin/dashboard/update/{{user.id}}" method="post">
+        <div class="mb-3">
+            <label>Name</label>
+            <input type = "text" name = "name" placeholder = "Name" class="form-control" value="{{user.name}}"/>
+        </div> 
+        <div class="mb-3">
+            <label>Position</label>
+            <input type = "text" name = "position" placeholder = "position" class="form-control" value="{{user.position}}"/>
+        </div> 
+        <div class="mb-3">
+            <label>Office</label>
+            <input type = "text" name = "office" placeholder = "office" class="form-control" value="{{user.office}}"/>
+        </div> 
+     
+        <input type = "submit" value = "Update" class="btn btn-primary mb-3"/>  
+     </form> 
+{% endblock content %}
+</div>
+     
+</div>
+</body>
+</html> 
